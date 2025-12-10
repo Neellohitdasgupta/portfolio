@@ -1,0 +1,21 @@
+node_modules
+.git
+.vscode
+*.bat
+*.md
+!README.md
+DEPLOY_NOW.bat
+PUSH_TO_GITHUB.bat
+*.txt
+!Neellohit_Dasgupta_Resume.txt
+🚀_DEPLOY_HERE.txt
+✅_SETUP_COMPLETE.txt
+🎯_YOU_ARE_HERE.txt
+app for bajaj
+resume.html
+resume_optimized.html
+projects/*/app.py
+projects/*/*.py
+projects/*/requirements.txt
+projects/*/venv
+projects/*/__pycache__

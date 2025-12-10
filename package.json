@@ -1,0 +1,19 @@
+{
+  "name": "neellohit-portfolio",
+  "version": "1.0.0",
+  "description": "AI/ML Engineer Portfolio - Neellohit Dasgupta",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "vercel --prod",
+    "dev": "vercel dev"
+  },
+  "keywords": [
+    "portfolio",
+    "ai",
+    "ml",
+    "machine-learning",
+    "deep-learning"
+  ],
+  "author": "Neellohit Dasgupta",
+  "license": "MIT"
+}

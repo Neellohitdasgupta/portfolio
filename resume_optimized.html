@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neellohit Dasgupta - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000000;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in 0.75in;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .contact-line {
+            font-size: 10pt;
+            color: #000;
+            margin-top: 5px;
+        }
+        
+        .contact-line a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        /* Section Headers */
+        .section {
+            margin-bottom: 18px;
+        }
+        
+        .section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            border-bottom: 1.5px solid #000;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Education */
+        .edu-item {
+            margin-bottom: 12px;
+        }
+        
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        
+        .edu-degree {
+            font-size: 11pt;
+        }
+        
+        .edu-date {
+            font-size: 10pt;
+            font-style: italic;
+        }
+        
+        .edu-details {
+            font-size: 10pt;
+            margin-left: 0;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+        
+        .skill-row {
+            font-size: 10.5pt;
+        }
+        
+        .skill-row strong {
+            font-weight: bold;
+            min-width: 150px;
+            display: inline-block;
+        }
+        
+        /* Projects */
+        .project-item {
+            margin-bottom: 14px;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .project-title {
+            font-size: 11pt;
+        }
+        
+        .project-tech {
+            font-size: 9pt;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .project-bullets {
+            margin-left: 20px;
+            margin-top: 4px;
+        }
+        
+        .project-bullets li {
+            margin-bottom: 3px;
+            font-size: 10.5pt;
+            line-height: 1.3;
+        }
+        
+        /* Certifications */
+        .cert-list {
+            margin-left: 20px;
+        }
+        
+        .cert-list li {
+            margin-bottom: 4px;
+            font-size: 10.5pt;
+        }
+        
+        /* Languages */
+        .languages {
+            font-size: 10.5pt;
+        }
+        
+        @media print {
+            body {
+                padding: 0.3in 0.5in;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* ATS Optimization */
+        strong {
+            font-weight: 600;
+        }
+        
+        /* Ensure proper spacing */
+        p {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="name">NEELLOHIT DASGUPTA</div>
+        <div class="contact-line">
+            📧 neellohitdsgpt@gmail.com | 📱 +91-7005357748 | 
+            🔗 <a href="https://linkedin.com/in/neellohit-dasgupta395">linkedin.com/in/neellohit-dasgupta395</a> | 
+            💻 <a href="https://github.com/Neellohitdasgupta">github.com/Neellohitdasgupta</a>
+        </div>
+        <div class="contact-line">📍 Bhopal, Madhya Pradesh, India</div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <div class="section-title">EDUCATION</div>
+        
+        <div class="edu-item">
+            <div class="edu-header">
+                <span class="edu-degree">Bachelor of Technology in Computer Science and Engineering (AI & ML)</span>
+                <span class="edu-date">Sept 2022 – May 2026</span>
+            </div>
+            <div class="edu-details">VIT Bhopal University, Bhopal, Madhya Pradesh</div>
+            <div class="edu-details">CGPA: 7.42/10 | Relevant Coursework: Machine Learning, Deep Learning, Data Structures, Algorithms, Database Management</div>
+        </div>
+        
+        <div class="edu-item">
+            <div class="edu-header">
+                <span class="edu-degree">Higher Secondary Education (12th Standard)</span>
+                <span class="edu-date">June 2022</span>
+            </div>
+            <div class="edu-details">Hindi Higher Secondary School, Agartala, Tripura | Percentage: 80.8%</div>
+        </div>
+        
+        <div class="edu-item">
+            <div class="edu-header">
+                <span class="edu-degree">Secondary Education (10th Standard)</span>
+                <span class="edu-date">July 2020</span>
+            </div>
+            <div class="edu-details">Holy Cross School, Agartala, Tripura | Percentage: 92%</div>
+        </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="section">
+        <div class="section-title">TECHNICAL SKILLS</div>
+        <div class="skills-grid">
+            <div class="skill-row"><strong>Programming Languages:</strong> Python, C++, Java</div>
+            <div class="skill-row"><strong>Machine Learning:</strong> Convolutional Neural Networks (CNN), Artificial Neural Networks (ANN), Long Short-Term Memory (LSTM), Recurrent Neural Networks (RNN), Computer Vision, Natural Language Processing (NLP)</div>
+            <div class="skill-row"><strong>Data Science & Analytics:</strong> Pandas, NumPy, Data Mining, Data Visualization, Dash, Matplotlib</div>
+            <div class="skill-row"><strong>Web Development:</strong> Flask, PHP, HTML, CSS, JavaScript, RESTful APIs</div>
+            <div class="skill-row"><strong>Database Management:</strong> MySQL, Database Design, Query Optimization</div>
+            <div class="skill-row"><strong>Cloud & DevOps:</strong> Amazon Web Services (AWS), Git, GitHub, Version Control</div>
+            <div class="skill-row"><strong>Development Tools:</strong> Jupyter Notebook, Google Colab, Firebase, Android Studio, Figma</div>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+        <div class="section-title">PROJECTS</div>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Facial Emotion Recognition for Education (FREd)</span>
+            </div>
+            <div class="project-tech">Technologies: Python, CNN, Flask, PHP, MySQL, OpenCV, TensorFlow</div>
+            <ul class="project-bullets">
+                <li>Developed real-time emotion recognition system using Convolutional Neural Networks (CNN) to monitor student engagement in classroom environments</li>
+                <li>Achieved 87% accuracy in detecting 7 different emotions (happy, sad, angry, surprised, neutral, fear, disgust) using deep learning techniques</li>
+                <li>Designed and implemented full-stack web application with Flask backend, PHP middleware, and MySQL database for data management</li>
+                <li>Created responsive user interface for real-time emotion analytics dashboard with visualization of engagement metrics</li>
+                <li>Integrated OpenCV for face detection and preprocessing, reducing inference time by 40%</li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Stock Price Forecasting & Visualization (PredictStox)</span>
+            </div>
+            <div class="project-tech">Technologies: Python, LSTM, RNN, Dash, Flask, Pandas, NumPy, Scikit-learn</div>
+            <ul class="project-bullets">
+                <li>Built end-to-end stock price prediction system using LSTM and RNN models with capability to forecast 10-15 years into the future</li>
+                <li>Achieved Mean Absolute Percentage Error (MAPE) of less than 5% on historical stock data validation</li>
+                <li>Developed interactive Dash visualization dashboard featuring real-time charts, trend analysis, and predictive insights</li>
+                <li>Implemented data preprocessing pipeline handling missing values, normalization, and feature engineering for time-series data</li>
+                <li>Integrated Flask REST API for seamless communication between ML model and frontend dashboard</li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Mental Health Support Chatbot (Capstone Project)</span>
+            </div>
+            <div class="project-tech">Technologies: Python, NLP, Flask, MySQL, Natural Language Toolkit (NLTK), TensorFlow</div>
+            <ul class="project-bullets">
+                <li>Developed NLP-based conversational chatbot providing mental health support and guidance using intent classification and entity recognition</li>
+                <li>Designed comprehensive MySQL database schema managing user authentication, chat history, session timestamps, and sentiment analysis results</li>
+                <li>Implemented Flask RESTful APIs for secure data storage, retrieval, and real-time chat functionality</li>
+                <li>Applied sentiment analysis algorithms to detect user emotional states and provide appropriate responses</li>
+                <li>Ensured data privacy and security through encryption and secure authentication mechanisms</li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Community Resource Locator Android Application (ResQMap)</span>
+            </div>
+            <div class="project-tech">Technologies: Java, Android SDK, Firebase, Google Maps API, Figma, XML</div>
+            <ul class="project-bullets">
+                <li>Designed and developed Android application for locating essential public services including hospitals, police stations, and emergency services</li>
+                <li>Integrated Google Maps API for real-time location tracking and navigation with optimized route suggestions</li>
+                <li>Implemented Firebase Authentication for secure user login and Firebase Realtime Database for dynamic data updates</li>
+                <li>Created intuitive UI/UX design using Figma with focus on accessibility and user experience</li>
+                <li>Developed in Java with XML layouts following Material Design guidelines and Android best practices</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+        <div class="section-title">CERTIFICATIONS</div>
+        <ul class="cert-list">
+            <li><strong>Applied Machine Learning in Python</strong> – Coursera (University of Michigan) | 2023</li>
+            <li><strong>OCI Data Science Professional</strong> – Oracle Cloud Infrastructure | 2025</li>
+            <li><strong>Generative AI using IBM Watsonx</strong> – IBM | 2025</li>
+        </ul>
+    </div>
+
+    <!-- Languages -->
+    <div class="section">
+        <div class="section-title">LANGUAGES</div>
+        <div class="languages">
+            <strong>English:</strong> Proficient (Professional Working Proficiency) | 
+            <strong>Hindi:</strong> Proficient (Professional Working Proficiency) | 
+            <strong>Bengali:</strong> Native Speaker
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neellohit Dasgupta - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+        
+        .header .title {
+            font-size: 1.2rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            color: #1a1a2e;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .education-item, .project-item {
+            margin-bottom: 20px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 1.1rem;
+        }
+        
+        .item-date {
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+        
+        .item-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .item-description {
+            color: #555;
+            margin-left: 20px;
+        }
+        
+        .item-description li {
+            margin-bottom: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        
+        .skill-category strong {
+            color: #667eea;
+        }
+        
+        .cert-list {
+            list-style: none;
+        }
+        
+        .cert-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .cert-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .tech-stack {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-top: 5px;
+            color: #667eea;
+        }
+        
+        @media print {
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>NEELLOHIT DASGUPTA</h1>
+        <div class="title">AI/ML Engineer | Full-Stack Developer</div>
+        <div class="contact-info">
+            <span>📧 neellohitdsgpt@gmail.com</span>
+            <span>📱 +91 7005357748</span>
+            <span>🔗 linkedin.com/in/neellohit-dasgupta395</span>
+            <span>💻 github.com/Neellohitdasgupta</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="education-item">
+            <div class="item-header">
+                <div class="item-title">VIT Bhopal University, Bhopal</div>
+                <div class="item-date">Sept 2022 – Ongoing</div>
+            </div>
+            <div class="item-subtitle">BTech in Computer Science and Engineering (AI & ML Specialization)</div>
+            <div class="item-subtitle">CGPA: 7.42/10</div>
+        </div>
+        
+        <div class="education-item">
+            <div class="item-header">
+                <div class="item-title">Hindi Higher Secondary School, Agartala, Tripura</div>
+                <div class="item-date">June 2022</div>
+            </div>
+            <div class="item-subtitle">12th Standard | Percentage: 80.8%</div>
+        </div>
+        
+        <div class="education-item">
+            <div class="item-header">
+                <div class="item-title">Holy Cross School, Agartala, Tripura</div>
+                <div class="item-date">July 2020</div>
+            </div>
+            <div class="item-subtitle">10th Standard | Percentage: 92%</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Programming:</strong> Python, C++, Java
+            </div>
+            <div class="skill-category">
+                <strong>Machine Learning:</strong> CNN, ANN, LSTM, RNN, Computer Vision
+            </div>
+            <div class="skill-category">
+                <strong>Data Science:</strong> Pandas, NumPy, Data Mining, Dash
+            </div>
+            <div class="skill-category">
+                <strong>Backend:</strong> Flask, PHP, MySQL
+            </div>
+            <div class="skill-category">
+                <strong>Cloud & Tools:</strong> AWS, Git, GitHub, Firebase
+            </div>
+            <div class="skill-category">
+                <strong>Development:</strong> Jupyter, Colab, Android (Java/XML)
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <div class="item-title">Facial Emotion Recognition for Education (FREd)</div>
+            </div>
+            <ul class="item-description">
+                <li>Developed real-time classroom emotion recognition system using CNN for monitoring student engagement</li>
+                <li>Integrated model with Flask + PHP + MySQL full-stack interface</li>
+                <li>Designed UI and connected backend for real-time monitoring and analytics</li>
+            </ul>
+            <div style="margin-top: 8px;">
+                <span class="tech-stack">CNN</span>
+                <span class="tech-stack">Flask</span>
+                <span class="tech-stack">PHP</span>
+                <span class="tech-stack">MySQL</span>
+            </div>
+        </div>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <div class="item-title">Stock Forecasting & Visualization (PredictStox)</div>
+            </div>
+            <ul class="item-description">
+                <li>Sole developer handling entire project end-to-end</li>
+                <li>Built LSTM/RNN forecasting model with 10-15 year future prediction capability</li>
+                <li>Created interactive Dash dashboard and integrated backend with Flask</li>
+            </ul>
+            <div style="margin-top: 8px;">
+                <span class="tech-stack">LSTM</span>
+                <span class="tech-stack">RNN</span>
+                <span class="tech-stack">Dash</span>
+                <span class="tech-stack">Flask</span>
+            </div>
+        </div>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <div class="item-title">Mental Health Support Chatbot (Capstone Project)</div>
+            </div>
+            <ul class="item-description">
+                <li>Developed NLP-based mental health chatbot for user support and guidance</li>
+                <li>Designed complete MySQL database for user IDs, passwords, timestamps, chat history, and results</li>
+                <li>Integrated Flask backend APIs with chatbot interface for secure data storage and retrieval</li>
+            </ul>
+            <div style="margin-top: 8px;">
+                <span class="tech-stack">NLP</span>
+                <span class="tech-stack">Flask</span>
+                <span class="tech-stack">MySQL</span>
+                <span class="tech-stack">API Development</span>
+            </div>
+        </div>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <div class="item-title">Community Resource Locator (ResQMap)</div>
+            </div>
+            <ul class="item-description">
+                <li>Designed Android app for locating essential public services</li>
+                <li>Built UI/UX using Figma; developed app in Java/XML</li>
+                <li>Integrated Firebase for authentication and real-time updates</li>
+            </ul>
+            <div style="margin-top: 8px;">
+                <span class="tech-stack">Java</span>
+                <span class="tech-stack">Android</span>
+                <span class="tech-stack">Firebase</span>
+                <span class="tech-stack">Figma</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Certifications</h2>
+        <ul class="cert-list">
+            <li><strong>Applied Machine Learning in Python</strong> | Coursera</li>
+            <li><strong>OCI Data Science Professional</strong> | Oracle</li>
+            <li><strong>Gen AI using IBM Watsonx</strong> | IBM</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Languages</h2>
+        <div style="display: flex; gap: 30px;">
+            <div><strong>English:</strong> Proficient</div>
+            <div><strong>Hindi:</strong> Proficient</div>
+            <div><strong>Bengali:</strong> Native</div>
+        </div>
+    </div>
+</body>
+</html>

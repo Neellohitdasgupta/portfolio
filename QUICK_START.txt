@@ -1,0 +1,98 @@
+================================================================================
+                    PORTFOLIO BACKEND - QUICK START GUIDE
+================================================================================
+
+EASIEST METHOD:
+---------------
+1. Double-click: INSTALL_AND_START.bat
+2. Wait for 3 windows to open
+3. Each should say "Server running on..."
+4. Done!
+
+
+MANUAL METHOD:
+--------------
+Open Command Prompt and run these ONE BY ONE:
+
+STEP 1 - Install (one time only):
+    pip install flask flask-cors requests yfinance
+
+STEP 2 - Start Backend #1 (NEW window):
+    cd C:\Users\Neellohit Dasgupta\Downloads\rayu_store_scaffold\portfolio\projects\predictstox-demo
+    python stock_api.py
+    (Keep window OPEN!)
+
+STEP 3 - Start Backend #2 (NEW window):
+    cd C:\Users\Neellohit Dasgupta\Downloads\rayu_store_scaffold\portfolio\projects\mental-health-chatbot-demo
+    python chatbot_api.py
+    (Keep window OPEN!)
+
+STEP 4 - Start Backend #3 (NEW window):
+    cd C:\Users\Neellohit Dasgupta\Downloads\rayu_store_scaffold\portfolio\projects\resqmap-demo
+    python routing_api.py
+    (Keep window OPEN!)
+
+
+TEST IT WORKS:
+--------------
+Open in browser: TEST_LOCALHOST.html
+Click 3 buttons - all should be green ✅
+
+
+OPEN YOUR PROJECTS:
+-------------------
+Now open these HTML files:
+- projects/predictstox-demo/index.html
+- projects/mental-health-chatbot-demo/index.html
+- projects/resqmap-demo/index.html
+
+
+TROUBLESHOOTING:
+----------------
+Problem: "python is not recognized"
+Solution: Install Python from python.org
+
+Problem: "No module named 'flask'"
+Solution: pip install flask flask-cors requests yfinance
+
+Problem: Localhost not opening
+Solution: Make sure all 3 backends are running
+
+Problem: Still not working
+Solution: Read TROUBLESHOOTING.md
+
+
+WHAT YOU SHOULD SEE:
+--------------------
+3 Command Prompt windows showing:
+  Window 1: "Server running on http://localhost:5000"
+  Window 2: "Server running on http://localhost:5001"
+  Window 3: "Server running on http://localhost:5002"
+
+
+TO STOP:
+--------
+Press Ctrl+C in each Command Prompt window
+
+
+SUMMARY:
+--------
+✓ 3 backends must run simultaneously
+✓ Keep Command Prompt windows open
+✓ Test with TEST_LOCALHOST.html first
+✓ Then open your project HTML files
+✓ Everything now uses REAL data!
+
+
+NEED MORE HELP?
+---------------
+Read these files:
+- START_HERE.md (simple guide)
+- MANUAL_BACKEND_START.md (detailed steps)
+- TROUBLESHOOTING.md (fix problems)
+- README_BACKENDS.md (complete overview)
+
+
+================================================================================
+                    THAT'S IT! ENJOY YOUR PORTFOLIO! 🎉
+================================================================================

@@ -1,0 +1,78 @@
+═══════════════════════════════════════════════════════════════════
+                    NEELLOHIT DASGUPTA
+                    AI/ML Engineer | Full-Stack Developer
+═══════════════════════════════════════════════════════════════════
+
+📧 neellohitdsgpt@gmail.com
+📱 +91 7005357748
+🔗 linkedin.com/in/neellohit-dasgupta395
+💻 github.com/Neellohitdasgupta
+📍 Bhopal, India
+
+═══════════════════════════════════════════════════════════════════
+EDUCATION
+═══════════════════════════════════════════════════════════════════
+
+VIT Bhopal University, Bhopal
+BTech in Computer Science and Engineering (AI & ML Specialization)
+Sept 2022 – Ongoing | CGPA: 7.42/10
+
+Hindi Higher Secondary School, Agartala, Tripura
+12th Standard | June 2022 | Percentage: 80.8%
+
+Holy Cross School, Agartala, Tripura
+10th Standard | July 2020 | Percentage: 92%
+
+═══════════════════════════════════════════════════════════════════
+TECHNICAL SKILLS
+═══════════════════════════════════════════════════════════════════
+
+Programming Languages: Python, C++, Java
+Machine Learning: CNN, ANN, LSTM, RNN, Computer Vision
+Data Science: Pandas, NumPy, Data Mining, Dash Visualization
+Backend: Flask, PHP, MySQL
+Cloud & Tools: AWS, Git, GitHub, Jupyter, Colab, Firebase
+
+═══════════════════════════════════════════════════════════════════
+PROJECTS
+═══════════════════════════════════════════════════════════════════
+
+1. Facial Emotion Recognition for Education (FREd)
+   • Developed real-time classroom emotion recognition system using CNN
+   • Integrated model with Flask + PHP + MySQL full-stack interface
+   • Designed UI and connected backend for real-time monitoring
+   Technologies: CNN, Flask, PHP, MySQL
+
+2. Stock Forecasting & Visualization using Dash (PredictStox)
+   • Sole developer handling entire project end-to-end
+   • Built LSTM/RNN forecasting model with 10-15 year prediction capability
+   • Created interactive Dash dashboard and integrated backend with Flask
+   Technologies: LSTM, RNN, Dash, Flask
+
+3. Mental Health Support Chatbot (Capstone Project)
+   • Developed NLP-based mental health chatbot for user support
+   • Designed complete MySQL database for user data and chat history
+   • Integrated Flask backend APIs with chatbot interface
+   Technologies: NLP, Flask, MySQL, API Development
+
+4. Community Resource Locator Android App (ResQMap)
+   • Designed Android app for locating essential public services
+   • Built UI/UX using Figma; developed app in Java/XML
+   • Integrated Firebase for authentication and real-time updates
+   Technologies: Java, Android, Firebase, Figma
+
+═══════════════════════════════════════════════════════════════════
+CERTIFICATIONS
+═══════════════════════════════════════════════════════════════════
+
+• Applied Machine Learning in Python | Coursera
+• OCI Data Science Professional | Oracle
+• Gen AI using IBM Watsonx | IBM
+
+═══════════════════════════════════════════════════════════════════
+LANGUAGES
+═══════════════════════════════════════════════════════════════════
+
+English (Proficient) | Hindi (Proficient) | Bengali (Native)
+
+═══════════════════════════════════════════════════════════════════

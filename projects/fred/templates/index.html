@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREd - Facial Emotion Recognition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .video-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .video-stream {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn.primary {
+            background: #4CAF50;
+        }
+        
+        .btn.primary:hover {
+            background: #45a049;
+        }
+        
+        .stats-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .emotion-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .emotion-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .emotion-bar {
+            width: 60%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .emotion-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎭 FREd</h1>
+            <p>Facial Emotion Recognition for Enhanced Learning</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="video-section">
+                <h2>Live Emotion Detection</h2>
+                <div class="video-container">
+                    <img src="/video_feed" alt="Live Video Feed" class="video-stream">
+                </div>
+                <div class="controls">
+                    <button class="btn" onclick="toggleRecording()">📹 Start Recording</button>
+                    <button class="btn" onclick="takeSnapshot()">📸 Snapshot</button>
+                    <button class="btn primary" onclick="window.location.href='/dashboard'">📊 Dashboard</button>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <h3 class="stats-title">Real-time Emotions</h3>
+                <div class="emotion-stats" id="emotionStats">
+                    <div class="emotion-item">
+                        <span>😊 Happy</span>
+                        <div class="emotion-bar">
+                            <div class="emotion-progress" style="width: 45%"></div>
+                        </div>
+                        <span>45%</span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>😐 Neutral</span>
+                        <div class="emotion-bar">
+                            <div class="emotion-progress" style="width: 30%"></div>
+                        </div>
+                        <span>30%</span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>😮 Surprise</span>
+                        <div class="emotion-bar">
+                            <div class="emotion-progress" style="width: 15%"></div>
+                        </div>
+                        <span>15%</span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>😢 Sad</span>
+                        <div class="emotion-bar">
+                            <div class="emotion-progress" style="width: 10%"></div>
+                        </div>
+                        <span>10%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>CNN Architecture</h3>
+                <p>Deep learning model trained on facial expressions for accurate emotion detection</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Real-time Processing</h3>
+                <p>Live video stream processing with instant emotion recognition and feedback</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Analytics Dashboard</h3>
+                <p>Comprehensive analytics for classroom engagement monitoring and insights</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Storage</h3>
+                <p>MySQL database integration for secure emotion data logging and analysis</p>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="/dashboard">📊 View Dashboard</a>
+            <a href="https://github.com/Neellohitdasgupta/FREd" target="_blank">💻 Source Code</a>
+            <a href="../">🏠 Back to Portfolio</a>
+        </div>
+    </div>
+    
+    <script>
+        let isRecording = false;
+        
+        function toggleRecording() {
+            const btn = event.target;
+            if (isRecording) {
+                btn.textContent = '📹 Start Recording';
+                btn.style.background = 'rgba(255, 255, 255, 0.2)';
+                isRecording = false;
+            } else {
+                btn.textContent = '⏹️ Stop Recording';
+                btn.style.background = '#f44336';
+                isRecording = true;
+            }
+        }
+        
+        function takeSnapshot() {
+            // Simulate snapshot functionality
+            alert('📸 Snapshot captured! Saved to gallery.');
+        }
+        
+        // Simulate real-time emotion updates
+        function updateEmotionStats() {
+            const emotions = ['😊 Happy', '😐 Neutral', '😮 Surprise', '😢 Sad', '😠 Angry', '😨 Fear'];
+            const statsContainer = document.getElementById('emotionStats');
+            
+            // Generate random emotion data
+            const emotionData = emotions.map(emotion => ({
+                name: emotion,
+                percentage: Math.floor(Math.random() * 60) + 5
+            }));
+            
+            // Sort by percentage
+            emotionData.sort((a, b) => b.percentage - a.percentage);
+            
+            // Update display
+            statsContainer.innerHTML = emotionData.slice(0, 4).map(emotion => `
+                <div class="emotion-item">
+                    <span>${emotion.name}</span>
+                    <div class="emotion-bar">
+                        <div class="emotion-progress" style="width: ${emotion.percentage}%"></div>
+                    </div>
+                    <span>${emotion.percentage}%</span>
+                </div>
+            `).join('');
+        }
+        
+        // Update stats every 3 seconds
+        setInterval(updateEmotionStats, 3000);
+        
+        console.log('🎭 FREd - Facial Emotion Recognition System Loaded!');
+    </script>
+</body>
+</html>

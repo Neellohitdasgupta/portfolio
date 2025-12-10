@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>FREd - Emotion Recognition</title>
+<script defer src='https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js'></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;color:#fff;padding:20px}
+.container{max-width:1400px;margin:0 auto}
+h1{text-align:center;font-size:2.5rem;margin-bottom:10px}
+.status{text-align:center;padding:8px 20px;background:#f44336;border-radius:20px;display:inline-block;margin:10px 0}
+.main{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin:20px 0}
+.video-section,.results-section{background:rgba(255,255,255,0.1);border-radius:15px;padding:20px}
+.camera-wrapper{position:relative;background:#000;border-radius:10px;margin:15px 0}
+video{width:100%;display:block}
+canvas{position:absolute;top:0;left:0}
+.loading{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.spinner{border:4px solid rgba(255,255,255,0.3);border-top:4px solid #4CAF50;border-radius:50%;width:50px;height:50px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.controls{display:flex;gap:10px;justify-content:center;margin:15px 0}
+button{padding:12px 24px;border:none;border-radius:25px;color:#fff;font-weight:600;cursor:pointer}
+.btn-start{background:#4CAF50}
+.btn-stop{background:#f44336;opacity:0.5}
+.emotion-display{text-align:center;padding:30px;background:rgba(0,0,0,0.3);border-radius:15px;margin:15px 0}
+.emotion-icon{font-size:5rem;margin-bottom:10px}
+.emotion-label{font-size:2rem;font-weight:bold;margin-bottom:10px}
+.info{background:rgba(0,0,0,0.2);border-radius:10px;padding:15px;margin:15px 0}
+.info-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
+.bar-item{margin-bottom:10px}
+.bar-label{display:flex;justify-content:space-between;margin-bottom:5px;font-size:0.9rem}
+.bar{width:100%;height:8px;background:rgba(255,255,255,0.2);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width 0.3s}
+.links{text-align:center;margin-top:20px}
+.links a{color:#fff;text-decoration:none;margin:0 10px;padding:10px 20px;border:2px solid rgba(255,255,255,0.3);border-radius:20px;display:inline-block}
+@media(max-width:968px){.main{grid-template-columns:1fr}h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1> FREd - Emotion Recognition</h1>
+<p style='text-align:center'>Real-time AI-powered emotion detection</p>
+<div style='text-align:center'><span class='status' id='status'> Camera Off</span></div>
+<div class='main'>
+<div class='video-section'>
+<h2> Live Camera</h2>
+<div class='camera-wrapper'>
+<video id='video' autoplay muted playsinline></video>
+<canvas id='canvas'></canvas>
+<div class='loading' id='loading'>
+<div class='spinner'></div>
+<p>Loading AI models...</p>
+</div>
+</div>
+<div class='controls'>
+<button class='btn-start' id='startBtn' onclick='start()'> Start</button>
+<button class='btn-stop' id='stopBtn' onclick='stop()' disabled> Stop</button>
+</div>
+<div style='background:rgba(76,175,80,0.2);border-left:4px solid #4CAF50;padding:15px;border-radius:5px'>
+<h4> Features:</h4>
+<ul style='margin-left:20px;line-height:1.8'>
+<li>Real-time face detection with box</li>
+<li>7 emotions: Happy, Sad, Angry, Surprised, Fearful, Disgusted, Neutral</li>
+<li>High accuracy using face-api.js</li>
+<li>Single emotion display</li>
+</ul>
+</div>
+</div>
+<div class='results-section'>
+<h2> Results</h2>
+<div class='emotion-display'>
+<div class='emotion-icon' id='icon'></div>
+<div class='emotion-label' id='label'>Neutral</div>
+<div id='conf' style='font-size:1.2rem;color:#4CAF50'>0%</div>
+</div>
+<div class='info'>
+<h4 style='margin-bottom:10px'> Info</h4>
+<div class='info-item'><span>Face:</span><span id='face'>No</span></div>
+<div class='info-item'><span>FPS:</span><span id='fps'>0</span></div>
+</div>
+<div>
+<h4>All Emotions:</h4>
+<div id='bars' style='margin-top:10px'></div>
+</div>
+</div>
+</div>
+<div class='links'>
+<a href='https://github.com/Neellohitdasgupta/FREd' target='_blank'> Source</a>
+<a href='../../index.html'> Back</a>
+</div>
+</div>
+<script>
+let stream=null,detecting=false,loaded=false,lastTime=Date.now(),frames=0;
+const emo={happy:{i:'',l:'Happy',c:'#4CAF50'},sad:{i:'',l:'Sad',c:'#2196F3'},angry:{i:'',l:'Angry',c:'#f44336'},surprised:{i:'',l:'Surprised',c:'#FF9800'},fearful:{i:'',l:'Fearful',c:'#9C27B0'},disgusted:{i:'',l:'Disgusted',c:'#795548'},neutral:{i:'',l:'Neutral',c:'#607D8B'}};
+async function loadModels(){
+const u='https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/';
+try{
+await Promise.all([faceapi.nets.tinyFaceDetector.loadFromUri(u),faceapi.nets.faceExpressionNet.loadFromUri(u)]);
+loaded=true;
+document.getElementById('loading').style.display='none';
+console.log(' Models loaded');
+return true;
+}catch(e){
+alert('Failed to load models');
+return false;
+}
+}
+async function start(){
+if(!loaded){
+document.getElementById('loading').style.display='flex';
+if(!await loadModels())return;
+}
+try{
+const v=document.getElementById('video'),c=document.getElementById('canvas');
+stream=await navigator.mediaDevices.getUserMedia({video:{width:{ideal:1280},height:{ideal:720},facingMode:'user'}});
+v.srcObject=stream;
+await new Promise(r=>{v.onloadedmetadata=()=>r()});
+c.width=v.videoWidth;
+c.height=v.videoHeight;
+detecting=true;
+document.getElementById('startBtn').disabled=true;
+document.getElementById('stopBtn').disabled=false;
+document.getElementById('stopBtn').style.opacity='1';
+document.getElementById('status').textContent=' Active';
+document.getElementById('status').style.background='#4CAF50';
+detect();
+}catch(e){
+alert('Camera access denied');
+}
+}
+function stop(){
+if(stream){
+stream.getTracks().forEach(t=>t.stop());
+stream=null;
+}
+detecting=false;
+document.getElementById('startBtn').disabled=false;
+document.getElementById('stopBtn').disabled=true;
+document.getElementById('stopBtn').style.opacity='0.5';
+document.getElementById('status').textContent=' Off';
+document.getElementById('status').style.background='#f44336';
+document.getElementById('canvas').getContext('2d').clearRect(0,0,9999,9999);
+}
+async function detect(){
+if(!detecting)return;
+const v=document.getElementById('video'),c=document.getElementById('canvas'),ctx=c.getContext('2d');
+ctx.clearRect(0,0,c.width,c.height);
+try{
+const d=await faceapi.detectAllFaces(v,new faceapi.TinyFaceDetectorOptions()).withFaceExpressions();
+if(d&&d.length>0){
+const det=d[0],box=det.detection.box,exp=det.expressions;
+ctx.strokeStyle='#4CAF50';
+ctx.lineWidth=3;
+ctx.strokeRect(box.x,box.y,box.width,box.height);
+const dom=Object.keys(exp).reduce((a,b)=>exp[a]>exp[b]?a:b);
+const conf=(exp[dom]*100).toFixed(1);
+update(dom,conf,exp);
+ctx.fillStyle='#4CAF50';
+ctx.fillRect(box.x,box.y-30,box.width,30);
+ctx.fillStyle='#000';
+ctx.font='bold 16px Arial';
+ctx.fillText(emo[dom].l+' ('+conf+'%)',box.x+5,box.y-10);
+document.getElementById('face').textContent='Yes ';
+}else{
+document.getElementById('face').textContent='No ';
+}
+frames++;
+const now=Date.now();
+if(now-lastTime>=1000){
+document.getElementById('fps').textContent=frames;
+frames=0;
+lastTime=now;
+}
+}catch(e){}
+requestAnimationFrame(detect);
+}
+function update(e,c,all){
+const d=emo[e];
+document.getElementById('icon').textContent=d.i;
+document.getElementById('label').textContent=d.l;
+document.getElementById('label').style.color=d.c;
+document.getElementById('conf').textContent='Confidence: '+c+'%';
+const bars=Object.keys(all).sort((a,b)=>all[b]-all[a]).map(em=>{
+const p=(all[em]*100).toFixed(1),ed=emo[em];
+return '<div class=\"bar-item\"><div class=\"bar-label\"><span>'+ed.i+' '+ed.l+'</span><span>'+p+'%</span></div><div class=\"bar\"><div class=\"bar-fill\" style=\"width:'+p+'%;background:'+ed.c+'\"></div></div></div>';
+}).join('');
+document.getElementById('bars').innerHTML=bars;
+}
+window.addEventListener('load',()=>{
+console.log(' FREd loaded');
+loadModels();
+});
+</script>
+</body>
+</html>

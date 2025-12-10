@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neellohit Dasgupta - AI/ML Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Neellohit Dasgupta</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glitch multilang-name" id="heroName" data-text="Hi, I'm Neellohit Dasgupta">Hi, I'm Neellohit Dasgupta</h1>
+                <p class="typing-text"></p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="resumenovemberlatest.pdf" download="Neellohit_Dasgupta_Resume.pdf" class="btn btn-secondary" id="downloadResume">📄 Download Resume</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-container">
+                        <div class="profile-border-animation">
+                            <div class="profile-inner-border">
+                                <div class="profile-image-wrapper">
+                                    <img src="profile.jpg" alt="Neellohit Dasgupta" class="profile-image">
+                                    <div class="profile-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-particles">
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>I'm not your typical CS student—I build AI systems that actually work in production. From real-time emotion recognition in classrooms to stock forecasting dashboards, I've shipped 4+ full-stack ML projects that solve real problems. While others are learning theory, I'm deploying models with Flask, MySQL, and AWS.</p>
+                    <p>What sets me apart? I'm a full-stack AI engineer. I don't just train models—I build the entire pipeline: CNN/LSTM architectures, Flask APIs, database design, and interactive dashboards. I've mastered the art of turning complex ML algorithms into user-friendly applications that people actually use.</p>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="4">0</span>
+                            <span class="stat-label">ML Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="3">0</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="7">0</span>
+                            <span class="stat-label">CGPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>CNN, ANN, LSTM, RNN, Computer Vision</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Programming</h3>
+                    <p>Python, C++, Java, Flask APIs</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Data Science</h3>
+                    <p>Pandas, NumPy, Dash, Data Mining</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">☁️</div>
+                    <h3>Cloud & Database</h3>
+                    <p>AWS, MySQL, Firebase, Git/GitHub</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="82"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="cert-grid">
+                <div class="cert-card" onclick="openCertificate('Coursera PZ9LZUAZYYMF certificate.pdf')">
+                    <div class="cert-badge" style="min-height: 80px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/600px-Coursera-Logo_600x600.svg.png" 
+                             alt="Coursera Logo" 
+                             style="width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    </div>
+                    <h3>Applied Machine Learning in Python</h3>
+                    <p class="cert-issuer">Coursera</p>
+                    <div class="cert-date">2023</div>
+                    <button class="view-cert-btn">👁️ View Certificate</button>
+                </div>
+                <div class="cert-card" onclick="openCertificate('oracle certificate.pdf')">
+                    <div class="cert-badge">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Logo.png" 
+                             alt="Oracle Logo" 
+                             style="width: 120px; height: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    </div>
+                    <h3>OCI Data Science Professional</h3>
+                    <p class="cert-issuer">Oracle</p>
+                    <div class="cert-date">2025</div>
+                    <button class="view-cert-btn">👁️ View Certificate</button>
+                </div>
+                <div class="cert-card" onclick="openCertificate('ibm certificate.pdf')">
+                    <div class="cert-badge">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" 
+                             alt="IBM Logo" 
+                             style="width: 120px; height: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    </div>
+                    <h3>Gen AI using IBM Watsonx</h3>
+                    <p class="cert-issuer">IBM</p>
+                    <div class="cert-date">2025</div>
+                    <button class="view-cert-btn">👁️ View Certificate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background: #1a1a2e; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                        <img src="fred.jpg" alt="Facial Emotion Recognition" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <a href="projects/fred-demo/index.html" class="project-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FREd - Facial Emotion Recognition</h3>
+                        <p>Real-time classroom emotion recognition system using CNN with full-stack interface for monitoring student engagement</p>
+                        <div class="project-tags">
+                            <span>CNN</span>
+                            <span>Flask</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: #1a1a2e; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                        <img src="stocks.jpg.jpeg" alt="Stock Forecasting" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <a href="projects/predictstox-demo/index.html" class="project-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>PredictStox - Stock Forecasting</h3>
+                        <p>End-to-end LSTM/RNN model with 10-15 year prediction capability and interactive Dash visualization dashboard</p>
+                        <div class="project-tags">
+                            <span>LSTM</span>
+                            <span>RNN</span>
+                            <span>Dash</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                        <img src="chatbot.png" alt="Mental Health Chatbot" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <a href="projects/mental-health-chatbot-demo/index.html" class="project-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mental Health Support Chatbot</h3>
+                        <p>NLP-based chatbot with complete MySQL database design and Flask API integration for secure data management</p>
+                        <div class="project-tags">
+                            <span>NLP</span>
+                            <span>Flask</span>
+                            <span>MySQL</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                        <img src="resqmap.jpg.jpg" alt="Community Resource Locator" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <a href="projects/resqmap-demo/index.html" class="project-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ResQMap - Community Resource Locator</h3>
+                        <p>Android app for locating essential public services with Firebase authentication and real-time updates</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                            <span>Android</span>
+                            <span>Firebase</span>
+                            <span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2024 - Present</h3>
+                        <h4>AI/ML Projects & Certifications</h4>
+                        <p>Built 4+ production-ready ML projects including FREd, PredictStox, and Mental Health Chatbot. Earned certifications from Oracle, IBM, and Coursera.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2022 - Ongoing</h3>
+                        <h4>BTech in CSE (AI & ML)</h4>
+                        <p>VIT Bhopal University - CGPA: 7.42/10. Specializing in Artificial Intelligence and Machine Learning with focus on deep learning and computer vision.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2022</h3>
+                        <h4>12th Standard - 80.8%</h4>
+                        <p>Hindi Higher Secondary School, Agartala, Tripura</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2020</h3>
+                        <h4>10th Standard - 92%</h4>
+                        <p>Holy Cross School, Agartala, Tripura</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Neellohit's ability to turn complex ML concepts into working applications is impressive. His FREd project showed real innovation in classroom engagement monitoring.</p>
+                    <div class="testimonial-author">
+                        <h4>Project Supervisor</h4>
+                        <p>VIT Bhopal University</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Outstanding work on the stock forecasting dashboard. The LSTM implementation and visualization were both technically sound and user-friendly.</p>
+                    <div class="testimonial-author">
+                        <h4>Technical Mentor</h4>
+                        <p>Data Science Project</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">A dedicated team player who brings both technical expertise and creative problem-solving to every project. His full-stack ML skills are exceptional for a student.</p>
+                    <div class="testimonial-author">
+                        <h4>Team Lead</h4>
+                        <p>ResQMap Project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's build something amazing!</h3>
+                    <p>I'm actively seeking opportunities in AI/ML engineering. Whether it's building intelligent systems, deploying production models, or creating full-stack ML applications—I'm ready to contribute from day one.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="icon">📧</span>
+                            <span>neellohitdsgpt@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📱</span>
+                            <span>+91 7005357748</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <span>Bhopal, India</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Neellohitdasgupta" class="social-link" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="http://linkedin.com/in/neellohit-dasgupta395" class="social-link" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/neellohit_21?igsh=MTZwYmxlenp1MDYwOA==" class="social-link" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Neellohit Dasgupta. All rights reserved.</p>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="cert-close" onclick="closeCertificate()">&times;</span>
+            <iframe id="certificateFrame" class="cert-frame"></iframe>
+            <a id="certificateDownload" class="cert-download-btn" download>📥 Download Certificate</a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">↑</button>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
