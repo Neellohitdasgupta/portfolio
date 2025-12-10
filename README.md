@@ -9,7 +9,7 @@ AI/ML Engineer Portfolio
 ## ✨ Features
 
 - Responsive portfolio website
-- 4 AI/ML project demos
+- 4 AI/ML project
 - Downloadable resume
 - Viewable certificates
 - Working contact form
