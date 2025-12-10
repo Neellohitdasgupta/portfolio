@@ -4,7 +4,7 @@ AI/ML Engineer Portfolio
 
 ## 🚀 Live Site
 
-[View Live Portfolio](https://portfolio-neellohit-dasguptas-projects.vercel.app/)
+[View Live Portfolio](https://neellohitdasguptaportfolio.netlify.app/)
 
 ## ✨ Features
 
